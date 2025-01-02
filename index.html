@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youtube Link Shortener</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+    <div class="container">
+        <h1>Youtube Link Shortener</h1>
+        <input type="text" id="videoUrl" placeholder="Paste your video link">
+        <button id="btn-short" onclick="shortenLink()">Shorten</button>
+        <input type="text" id="result" value="" readonly>
+        <!-- <div id="result">hsagdjsdg</div> -->
+    </div>
+
+    <script>
+        "use strict"
+        const urlInput = document.getElementById('videoUrl');
+        const btnShort = document.getElementById('btn-short');
+        // var url = urlInput.value;
+        // var url = 'https://www.youtube.com/watch?v=PL3Odw-k8W4';
+
+
+        function shortenLink(){
+            const result = document.getElementById('result');
+
+            if(urlInput.value === ""){
+                alert("Paste your video link");
+            }
+            // if(urlInput.startsWith("https://www.youtube.com")){
+            //     console.log();
+            // }
+            // else{
+            //     alert("Enter a Valid Youtube video link please!")
+            // }
+
+            var url = String(urlInput.value);
+            let urlChar = url.split('').reverse().join('');
+            let urlSlice = urlChar.slice(0, 11);
+            const ans = urlSlice.split('').reverse().join('');
+            console.log(ans);
+            result.value = ans;
+            // console.log(urlChar);
+
+
+            // let urlArr = Array(url);
+            // let urlRev = urlArr.reverse();
+            // console.log(urlRev);
+            // // let firstNum = urlChar.indexOf("=");
+
+            // let lastNum = urlChar.slice(-1);
+            // // console.log(firstNum);
+            // console.log(urlChar.slice(firstNum, lastNum));
+            // // console.log(urlChar.substring(firstNum, lastNum));
+
+            
+        }
+    </script>
+</body>
+</html>
